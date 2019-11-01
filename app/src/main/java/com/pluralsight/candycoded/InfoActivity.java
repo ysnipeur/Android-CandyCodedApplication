@@ -10,6 +10,9 @@ import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+
+
+
 public class InfoActivity extends AppCompatActivity {
 
     @Override
@@ -29,6 +32,8 @@ public class InfoActivity extends AppCompatActivity {
 
     // ***
     // TODO - Task 2 - Launch the Google Maps Activity
+    // DONE BY TAKOUMBO MBE Bernard Yvan
+    // Thanks to PLURALSIGHT AND GOOGLE
     // ***
 
 
@@ -59,5 +64,28 @@ public class InfoActivity extends AppCompatActivity {
 
     // ***
     // TODO - Task 3 - Launch the Phone Activity
+    // DONE BY TAKOUMBO MBE Bernard Yvan
+    // Thanks to PLURALSIGHT AND GOOGLE
     // ***
+
+    public void createPhoneIntent(View view)
+    {
+        // Creating our implicit intent to handle phone dial
+
+        Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
+
+        // Creating the data (phone number) to be passed to the intent for automatic load
+
+        Uri phoneNumberUri = Uri.parse("tel:0123456789");
+
+        // Passing the data to the phoneIntent
+
+        phoneIntent.setData(phoneNumberUri);
+
+        // Start the activity
+
+        // We're not going to test the presence of a specified app because every telephone application. So we start Directly
+
+        startActivity(phoneIntent);
+    }
 }
