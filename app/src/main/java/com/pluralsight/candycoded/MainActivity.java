@@ -28,7 +28,6 @@ import cz.msebera.android.httpclient.Header;
 public class MainActivity extends AppCompatActivity {
     private Candy[] candies;
     private CandyDbHelper candyDbHelper = new CandyDbHelper(this);
-    private Intent infoIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,11 +88,11 @@ public class MainActivity extends AppCompatActivity {
 
         // Creating our explicit intent
 
-        Intent infoIntent = new Intent(this, InfoActivity.class);
+        Intent intent = new Intent(this, InfoActivity.class);
         
         // Start Activity
 
-        startActivity(infoIntent);
+        startActivity(intent);
         return super.onOptionsItemSelected(item);
     }
 
