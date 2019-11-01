@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -70,5 +71,41 @@ public class DetailActivity extends AppCompatActivity {
 
     // ***
     // TODO - Task 4 - Share the Current Candy with an Intent
+
+    // DONE BY TAKOUMBO MBE Bernard Yvan
+    // Thanks to PLURALSIGHT AND GOOGLE
     // ***
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        createShareIntent();
+        return super.onOptionsItemSelected(item);
+    }
+
+    // Method to used in the onOptionsItemSelected
+
+    private void createShareIntent()
+    {
+        // Creating our implicit intent to share
+
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+
+        // setting the data type
+
+        shareIntent.setType("text/plain");
+
+        // Creating the string we want to share
+        String shareString =   SHARE_DESCRIPTION + mCandyImageUrl + HASHTAG_CANDYCODED;
+
+        // adding the text we want to share by passing the data wtih the putExtra() method of our intent
+
+        shareIntent.putExtra(Intent.EXTRA_TEXT, shareString);
+
+        // Start the activity
+
+        startActivity(shareIntent);
+
+    }
 }
