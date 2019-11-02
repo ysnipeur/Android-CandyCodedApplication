@@ -41,11 +41,11 @@ public class InfoActivity extends AppCompatActivity {
     {
         // Let's create the location data
 
-        Uri uriAdress = Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
+        Uri uriLocationAdress = Uri.parse("geo:0,0?q=618 E South St Orlando, FL 32801");
 
         // Creating the implicit intent
 
-        Intent mapIntent = new Intent(Intent.ACTION_VIEW, uriAdress);
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, uriLocationAdress);
 
         // To specify the app that's going to handle the intent, we use the setPackage method and passe in the app package name
         // In our case google maps
